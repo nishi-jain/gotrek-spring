@@ -1,0 +1,202 @@
+@CHARSET "ISO-8859-1";
+
+html {
+	background-color: rgb(255, 255, 255);
+}
+
+.sections {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	background: rgb(225, 255, 255); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(225, 255, 255, 1) 0%,
+		rgba(225, 255, 255, 1) 7%, rgba(225, 255, 255, 1) 12%,
+		rgba(230, 248, 253, 1) 30%, rgba(200, 238, 251, 1) 54%,
+		rgba(190, 228, 248, 1) 75%, rgba(177, 216, 245, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(225,
+		255, 255, 1)), color-stop(7%, rgba(225, 255, 255, 1)),
+		color-stop(12%, rgba(225, 255, 255, 1)),
+		color-stop(30%, rgba(230, 248, 253, 1)),
+		color-stop(54%, rgba(200, 238, 251, 1)),
+		color-stop(75%, rgba(190, 228, 248, 1)),
+		color-stop(100%, rgba(177, 216, 245, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(225, 255, 255, 1) 0%,
+		rgba(225, 255, 255, 1) 7%, rgba(225, 255, 255, 1) 12%,
+		rgba(230, 248, 253, 1) 30%, rgba(200, 238, 251, 1) 54%,
+		rgba(190, 228, 248, 1) 75%, rgba(177, 216, 245, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(225, 255, 255, 1) 0%,
+		rgba(225, 255, 255, 1) 7%, rgba(225, 255, 255, 1) 12%,
+		rgba(230, 248, 253, 1) 30%, rgba(200, 238, 251, 1) 54%,
+		rgba(190, 228, 248, 1) 75%, rgba(177, 216, 245, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(225, 255, 255, 1) 0%,
+		rgba(225, 255, 255, 1) 7%, rgba(225, 255, 255, 1) 12%,
+		rgba(230, 248, 253, 1) 30%, rgba(200, 238, 251, 1) 54%,
+		rgba(190, 228, 248, 1) 75%, rgba(177, 216, 245, 1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(225, 255, 255, 1) 0%,
+		rgba(225, 255, 255, 1) 7%, rgba(225, 255, 255, 1) 12%,
+		rgba(230, 248, 253, 1) 30%, rgba(200, 238, 251, 1) 54%,
+		rgba(190, 228, 248, 1) 75%, rgba(177, 216, 245, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff',
+		endColorstr='#b1d8f5', GradientType=1); /* IE6-9 */
+}
+
+#dtText {
+	font-size: 20px;
+}
+
+hr {
+	margin-top: 4%;
+}
+
+.text-muted {
+	font-family: Freestyle script;
+	font-size: 58px;
+	color: rgb(0, 0, 128);
+	font-weight: 650;
+	display: inline;
+}
+
+body {
+	margin-top: 0px;
+}
+
+nav {
+	width: 80%;
+	margin-left: 40px;
+}
+
+.nav {
+	background-color: rgb(0, 0, 128);
+}
+
+.nav a {
+	font-family: Bradley Hand ITC;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.container-fluid {
+	position: relative;
+}
+.wide{
+	width:70%;
+}
+.nav>div {
+	margin: 2px;
+}
+
+.descp {
+	margin-top: 30px;
+	width: 70%;
+}
+
+.upTrek {
+	background-color: rgb(227, 244, 11);
+	margin-top: 100px;
+	height: 40px;
+	border: 2px solid rgb(0, 0, 128);
+}
+
+#myModalLabel {
+	font-family: Bradley Hand ITC;
+	font-size: 20px;
+	color: rgb(0, 0, 128);
+}
+
+.options {
+	color: rgb(227, 244, 11);
+}
+
+.btn-sm {
+	background-color: rgb(227, 244, 11);
+	margin-bottom: 60px;
+	color: rgb(0, 0, 128);
+	border: 2px solid rgb(0, 0, 128);
+}
+
+#accordion {
+	width: 80%;
+	margin-top: 10px;
+}
+
+.option {
+	font-family: Bradley Hand ITC;
+	font-size: 25px;
+	font-weight: bold;
+	color: rgb(0, 0, 128);
+}
+
+.panel-default {
+	background-color: rgb(227, 244, 11);
+}
+
+.image {
+	position: relative;
+	width: 100%; /* for IE 6 */
+	margin: 15px 40px;
+}
+
+.sky {
+	margin: 15px auto;
+}
+.newtrek{
+	margin-left:80%;
+}
+.trkpic{
+	margin-top:19px;
+	width:295px;
+}
+
+h2 span {
+	color: white;
+	letter-spacing: -1px;
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+	font-family: Bradley Hand ITC;
+	font-size: 45px;
+	font-weight: bold;
+	color: rgb(227, 244, 11);
+}
+
+h2 {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100%;
+}
+
+.footerNote {
+	font-family: Bradley Hand ITC;
+	font-size: 20px;
+	color: rgb(0, 0, 128);
+	font-weight: bold;
+	vertical-align: bottom;
+	margin-left: 60%;
+}
+
+.footer {
+	margin-top: 150px;
+	/*text-align: right;*/
+}
+
+hr {
+	border-top: 1px solid rgb(227, 244, 11);
+	border-bottom: none;
+	height: 0;
+}
+
+.social {
+	font-family: Bradley Hand ITC;
+	font-size: 22px;
+	font-weight: bold;
+	color: rgb(0, 0, 128);
+	text-align: left;
+}
+
+.social_btn {
+	margin: 5px 0;
+	text-align: left;
+}

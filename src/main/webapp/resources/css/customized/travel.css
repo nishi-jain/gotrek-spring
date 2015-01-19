@@ -1,0 +1,233 @@
+body{
+	background: rgba(183,222,237,1);
+	background: -moz-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 30%, rgba(33,180,226,1) 99%, rgba(183,222,237,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(183,222,237,1)), color-stop(30%, rgba(113,206,239,1)), color-stop(99%, rgba(33,180,226,1)), color-stop(100%, rgba(183,222,237,1)));
+	background: -webkit-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 30%, rgba(33,180,226,1) 99%, rgba(183,222,237,1) 100%);
+	background: -o-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 30%, rgba(33,180,226,1) 99%, rgba(183,222,237,1) 100%);
+	background: -ms-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 30%, rgba(33,180,226,1) 99%, rgba(183,222,237,1) 100%);
+	background: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 30%, rgba(33,180,226,1) 99%, rgba(183,222,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed', GradientType=1 );
+	position: relative;
+}
+.text-muted{
+	font-family:Freestyle script;
+	font-size:58px;
+	color:rgb(69,57,213);
+	font-weight:bold;
+	display:inline;
+ }
+.heading{
+	margin-top:7px;
+}
+
+label{
+	font-family:Bradley Hand ITC;
+	font-size:20px;
+	color:rgb(0,0,128);
+}
+.btn-lg{
+	background-color:rgb(227,244,11);
+	margin-bottom:60px;
+	color:rgb(0,0,128);
+	border: 2px solid rgb(0,0,128);
+	float:right;
+}
+#trek{
+	color:rgb(0,0,128);
+}
+.head-font{
+	font-family:Bradley Hand ITC;
+	font-size:29px;
+	color:rgb(0,0,128);
+	font-weight: bold;
+	
+}
+
+
+.register{
+	background-color: rgb(227,244,11);
+	margin-top:10px;
+	border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border: 3px solid #000000;
+	border-color:rgb(0,0,128);
+}
+form{
+	margin: 18px 0;
+}
+.font-design{
+	font-family:Bradley Hand ITC;
+	font-size:38px;
+	margin-top: 5px;
+	margin-left: 5px;
+	font-weight:bold;
+	color:rgb(0,0,128);
+}
+.mar1{
+	margin-top: 5%;
+	
+}
+
+.demo{
+	font-family:Bradley Hand ITC;
+	font-size:28px;
+	font-weight:bold;
+	color:rgb(0,0,128);
+	width:480px;
+	display:inline-block;
+}
+
+#img1{
+	width:90%;
+	margin-right:1%;
+	height:600px;
+	position:absolute;
+	margin-top:10px;
+	opacity: 0.8;
+}
+.text{
+	z-index:100;
+    position:absolute;    
+    color:black;
+    font-size:24px;
+    font-weight:bold;
+	font-style:italic;
+    top:250px;
+	left:100px;
+	width:80%;
+	font-family:monotype corsiva;
+}
+
+.btn-sm{
+	background-color:rgb(227,244,11);
+	margin-bottom:60px;
+	color:rgb(0,0,128);
+	border: 2px solid rgb(0,0,128);
+}
+.trkpic{
+	margin-top:19px;
+	width:295px;
+}
+.demo-trkpic{
+	margin-top:4px;
+	width:280px;
+	height:165px;
+}
+
+
+.form-inline{
+	float:right;
+    padding-top: 8px;
+    margin-top: 5px;
+	margin-bottom: 5px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+	background-color:rgb(227,244,11);
+	border: 3px solid rgb(0,0,128);
+
+}
+.login{
+	height:27px;
+
+}
+.user_login{
+	font-family:Bradley Hand ITC;
+	font-size:20px;
+	font-weight:bold;
+	color:rgb(0,0,128);
+}
+
+.footerNote{
+	font-family:Bradley Hand ITC;
+	font-size:20px;
+	color:rgb(0,0,128);
+	font-weight:bold;
+	vertical-align:bottom;
+		
+}
+
+.footer{
+	margin-top:100px;
+	text-align: left;
+	
+}
+hr{
+	
+	margin-top: 0px;
+	border-top: 1px solid rgb(227,244,11) ;
+	border-bottom: none;
+	height: 0;
+}
+
+
+
+
+.social{
+	font-family:Bradley Hand ITC;
+	font-size:22px;
+	font-weight:bold;
+	color:rgb(0,0,128);
+	text-align: left;
+
+}
+
+.social_btn{
+	margin: 5px 0;
+	text-align: left;
+}
+
+#color-animate{
+	margin-top:1%;
+    height: 240px;
+    background: red;
+   
+    -webkit-animation: myfirst 8s linear infinite alternate; /* Chrome, Safari, Opera */
+    animation: myfirst 8s linear infinite alternate;
+}
+
+.position-animate{
+   	width: 270%;
+    position: relative;
+    overflow: hidden;
+    -webkit-animation: mySecond 12s linear infinite alternate; /* Chrome, Safari, Opera */
+    animation: mySecond 12s linear infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {background:rgb(227,244,11); }
+    25%  {background:rgb(163,224,11); }
+    50%  {background:rgb(136,244,12); }
+    75%  {background:rgb(11,239,205); }
+    100% {background:rgb(11,213,224); }
+}
+
+@keyframes myfirst {
+  	  0%   {background:rgb(227,244,11); }
+    25%  {background:rgb(163,224,11); }
+    50%  {background:rgb(136,244,12); }
+    75%  {background:rgb(11,239,205); }
+    100% {background:rgb(11,213,224); }
+}
+
+/* Standard syntax */
+@-webkit-keyframes mySecond{
+    0%   {left:-150%; top:0%;}
+    25%  {left:-100%; top:0%;}
+    50%  { left:-50%; top:0%;}
+    75%  { left:0%; top:0%;}
+   100% {left:60%; top:0%;} 
+}
+
+@keyframes mySecond{
+     0%   {left:-150%; top:0%;}
+    25%  {left:-100%; top:0%;}
+    50%  { left:-50%; top:0%;}
+    75%  { left:0%; top:0%;}
+   100% {left:60%; top:0%;} 
+}
+
+
+
