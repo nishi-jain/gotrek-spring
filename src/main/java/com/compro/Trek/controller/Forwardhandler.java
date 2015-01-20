@@ -22,7 +22,10 @@ public class Forwardhandler {
 	@RequestMapping(value="account.do")
 	public String getUserAccount(@ModelAttribute("user") UserModel user,ModelMap model,HttpServletRequest request,HttpServletResponse response){
 		String userEmail=user.getEmail();
+		String userName=user.getUsername();
 		Cookie ckEmail = new Cookie("currentSessionEmail",userEmail);
+		Cookie ckName = new Cookie("currentSessionUsername",userName);
+		response.addCookie(ckName);
 		response.addCookie(ckEmail);
 		model.addAttribute("user",user);
 		model.addAttribute("trekModel",new TrekModel());

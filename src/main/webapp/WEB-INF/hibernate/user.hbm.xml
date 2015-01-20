@@ -6,10 +6,17 @@
 <hibernate-mapping>
 	<class name="com.compro.Trek.form.UserModel" table="newuser">
 		<id name="User_id" type="int" column="User_id">
-			<generator class="increment" ></generator>
+			<generator class="increment"></generator>
 		</id>
 		<property name="Username" column="Username" type="string" />
 		<property name="Email" column="Email" type="string" />
 		<property name="Password" column="Password" type="string" />
+		<set name="treks" table="usertrek_xref" inverse="true"
+			 fetch="select" sort="unsorted" mutable="true"
+			optimistic-lock="true" embed-xml="true">
+			<key column="trek_id" on-delete="noaction" />
+			<many-to-many column="user_id" class="com.compro.Trek.form.UserModel"
+				embed-xml="true" not-found="exception" unique="false" />
+		</set>
 	</class>
 </hibernate-mapping>  

@@ -9,7 +9,6 @@
    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 
-
 	<!-- Hibernate session factory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -29,6 +28,7 @@
 			<list>
 				<value>../hibernate/user.hbm.xml</value>
 				<value>../hibernate/trek.hbm.xml</value>
+				<value>../hibernate/trekuser_xref.hbm.xml</value>
 			</list>
 		</property>
 
