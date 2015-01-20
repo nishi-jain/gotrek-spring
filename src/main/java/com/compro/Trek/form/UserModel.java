@@ -1,6 +1,8 @@
 package com.compro.Trek.form;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class UserModel implements Serializable{
@@ -10,7 +12,16 @@ public class UserModel implements Serializable{
 	private String Username;
 	private String Email;
 	private String Password;
+	private Set<TrekModel> treks= new HashSet<TrekModel>();;
 	
+	public Set<TrekModel> getTreks() {
+		return treks;
+	}
+
+	public void setTreks(Set<TrekModel> treks) {
+		this.treks = treks;
+	}
+
 	public void setUser_id(int user_id) {
 		User_id = user_id;
 	}
@@ -37,6 +48,4 @@ public class UserModel implements Serializable{
 	public void setPassword(String Password) {
 		this.Password = Password;
 	}
-	
-
 }

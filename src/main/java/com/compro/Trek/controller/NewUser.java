@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,28 +64,41 @@ public class NewUser{
 		}
 
 	}
-	
+
 	/*  Checks any existing sessions,If session exists then directs
 	    to user account.
 	 */
-	
+
 	@RequestMapping(value="/welcome.do")
 	public String getExistingSession(HttpServletRequest request){
 		Cookie[] cookies = request.getCookies();
 		String cookieName = "currentSessionEmail"; //cookie created for user session
+		String cookieUser = "currentSessionName";
 		int status=1;
 		for (int i=0; i<cookies.length; i++) {
-		  Cookie cookie = cookies[i];
-		  System.out.println(cookies[i].getName());
-		  if (cookieName.equals(cookie.getName())){
-			  status=2;
-			  break;
-		  }
+			Cookie cookie = cookies[i];
+			if (cookieName.equals(cookie.getName())){
+				status=2;
+				break;
+			}
 		}
-		if(status==2)
+		if(status==2){
+			UserModel userTest = new UserModel();
+			for (int i=0; i<cookies.length; i++) {
+				Cookie cookie = cookies[i];
+				if (cookieUser.equals(cookie.getName())){
+					String name=cookie.getValue();
+					userTest.setUsername(name);
+					HttpSession session = request.getSession();
+					session.setAttribute("user",userTest);
+				
+				}
+			}
 			return "redirect:/account.do";
-		else
+			
+		}else{
 			return "index";
-		  
+		}
+
 	}
 }

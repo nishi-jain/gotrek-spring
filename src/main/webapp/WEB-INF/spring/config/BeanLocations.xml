@@ -11,5 +11,4 @@
 
 	<import resource="../beans/User.xml"/>
 	<import resource="../beans/Trek.xml"/>
-	
 </beans>

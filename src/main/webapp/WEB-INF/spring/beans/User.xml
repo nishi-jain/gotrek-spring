@@ -16,7 +16,7 @@
 	</bean>
 
 	<!-- User Data Access Object -->
-	<bean id="UserModel" class="com.compro.Trek.form.UserModel">
+	<bean id="TrekUserModel" class="com.compro.Trek.form.UserModel">
 	</bean>
 
 </beans>

@@ -1,5 +1,7 @@
 package com.compro.Trek.Bo.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.compro.Trek.Bo.TrekBo;
@@ -30,6 +32,10 @@ public class TrekBoImpl implements TrekBo {
  
 	public TrekModel findByTrekId(String Email,String Password){
 		return trekDao.findByTrekId(Email,Password);
+	}
+	
+	public List<TrekModel> getTreks(){
+		return trekDao.getTreks();
 	}
 
 }

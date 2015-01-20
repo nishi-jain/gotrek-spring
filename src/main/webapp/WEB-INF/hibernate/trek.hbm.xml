@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="com.compro.Trek.form.TrekModel" table="trek_info">
 		<id name="trek_id" type="int" column="trek_id">
-			<generator class="increment" ></generator>
+			<generator class="increment"></generator>
 		</id>
 		<property name="trekname" column="trek_name" type="string" />
 		<property name="startdate" column="start_date" type="string" />
@@ -16,5 +16,13 @@
 		<property name="description" column="Notes" type="string" />
 		<property name="imgurl" column="img_url" type="string" />
 		<property name="treksummary" column="treksummary" type="string" />
+		<set name="joinees" table="usertrek_xref" inverse="true"
+			  fetch="select" sort="unsorted" mutable="true"
+			optimistic-lock="true" embed-xml="true">
+			<key column="user_id" on-delete="noaction" />
+			<many-to-many column="trek_id" class="com.compro.Trek.form.TrekModel"
+				embed-xml="true" not-found="exception" unique="false" />
+		</set>
+
 	</class>
 </hibernate-mapping>  
