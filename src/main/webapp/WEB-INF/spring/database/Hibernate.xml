@@ -26,11 +26,12 @@
 
 		<property name="mappingResources">
 			<list>
-				<value>../hibernate/user.hbm.xml</value>
 				<value>../hibernate/trek.hbm.xml</value>
+				<value>../hibernate/user.hbm.xml</value>
 				<value>../hibernate/trekuser_xref.hbm.xml</value>
+
 			</list>
-		</property>
+		</property> 
 
 	</bean>
 

@@ -1,7 +1,5 @@
 package com.compro.Trek.form;
 
-import java.util.HashSet;
-import java.util.Set;
 
 
 public class TrekModel {
@@ -13,8 +11,10 @@ public class TrekModel {
 	private String category;
 	private String imgurl;
 	private String description;
+
 	private String treksummary;
 	
+
 	public String getTreksummary() {
 		return treksummary;
 	}
@@ -22,20 +22,13 @@ public class TrekModel {
 	public void setTreksummary(String treksummary) {
 		this.treksummary = treksummary;
 	}
-	private Set<UserModel> joinees=new HashSet<UserModel>();;
+
+
 	
-	public Set<UserModel> getJoinees() {
-		return joinees;
-	}
-
-	public void setJoinees(Set<UserModel> joinees) {
-		this.joinees = joinees;
-	}
-
 	public String getImgurl() {
 		return imgurl;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -51,7 +44,7 @@ public class TrekModel {
 	public void setTrek_id(int trek_id) {
 		this.trek_id = trek_id;
 	}
-	
+
 	public void setImgurl(String imgurl) {
 		this.imgurl = "/resources/images/"+imgurl;
 	}

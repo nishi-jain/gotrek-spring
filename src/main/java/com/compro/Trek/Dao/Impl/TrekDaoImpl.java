@@ -2,19 +2,12 @@ package com.compro.Trek.Dao.Impl;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.compro.Trek.Dao.TrekDao;
 import com.compro.Trek.form.TrekModel;
-import com.compro.Trek.form.UserModel;
 
 public class TrekDaoImpl implements TrekDao {
 	@Autowired
@@ -39,20 +32,35 @@ public class TrekDaoImpl implements TrekDao {
 		sessionFactory.getCurrentSession().delete(Trek);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Transactional
-	public TrekModel findByTrekId(String Email,String Password){
-
-		Criteria cr = sessionFactory.getCurrentSession().createCriteria(TrekModel.class);
-		cr.add(Restrictions.eq("Email",Email)).add(Restrictions.eq("Password",Password));
-		List<TrekModel> results = cr.list();
-		return (TrekModel)results.get(0); 
+	public int findTrekID(String trekname){
+		@SuppressWarnings("unchecked")
+		List<TrekModel> result = sessionFactory.getCurrentSession().createQuery("from TrekModel where trek_name='"+trekname+"'").list();
+		TrekModel recenttrek = result.get(0);
+		int trekid=recenttrek.getTrek_id();
+		return trekid;
+     }
+	
+	@Transactional
+	public TrekModel getTreks(){
+		TrekModel recenttrek = (TrekModel) sessionFactory.getCurrentSession().createQuery("from TrekModel ORDER BY trek_id DESC")
+                .setMaxResults(1)
+                .uniqueResult();
+		
+		return recenttrek;
+		
 	}
+	
 	@SuppressWarnings("unchecked")
-	public List<TrekModel> getTreks(){
-		Criteria cr = sessionFactory.getCurrentSession().createCriteria(TrekModel.class);
-		List<TrekModel> results = cr.list();
-		return results;
+	public List<String> getuserTreks(int userid){
+		@SuppressWarnings("unchecked")
+		List<TrekModel> result=sessionFactory.getCurrentSession().createQuery("Select T.trek_id from TrekUserModel T where T.user_id='"+userid+"'").list();
+		List<String> trekList = null;
+		for(int i=0; i<result.size();i++){
+			trekList=sessionFactory.getCurrentSession().createQuery("Select Y.trekname from TrekModel Y where Y.trek_id='"+result.get(i)+"'").list();
+		}
+	
+		return trekList;
 		
 	}
 

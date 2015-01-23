@@ -30,12 +30,17 @@ public class TrekBoImpl implements TrekBo {
 		trekDao.delete(Trek);
 	}
  
-	public TrekModel findByTrekId(String Email,String Password){
-		return trekDao.findByTrekId(Email,Password);
+	
+	public TrekModel getTreks(){
+		return trekDao.getTreks();
 	}
 	
-	public List<TrekModel> getTreks(){
-		return trekDao.getTreks();
+	public int findTrekID(String trekname){
+		return trekDao.findTrekID(trekname);
+	}
+	
+	public List<String> getuserTreks(int userid){
+		return trekDao.getuserTreks(userid);
 	}
 
 }

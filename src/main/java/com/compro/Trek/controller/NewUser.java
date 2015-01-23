@@ -34,7 +34,6 @@ public class NewUser{
 		user.setUsername(userName);
 		user.setEmail(userEmail);
 		user.setPassword(userPassword);
-		System.out.println(user);
 		exists=UserBoImpl.findByUserEmail(userEmail);
 		if(exists=="true"){
 			user.setEmail("already exists!");

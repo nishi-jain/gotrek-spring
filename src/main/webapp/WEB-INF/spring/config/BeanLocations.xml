@@ -11,4 +11,5 @@
 
 	<import resource="../beans/User.xml"/>
 	<import resource="../beans/Trek.xml"/>
+	<import resource="../beans/Usertrek_xref.xml"/>
 </beans>

@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="trekmanage">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="Cache-Control" content="no-cache" />
@@ -22,8 +22,12 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="<c:url value="/resources/js/angular.min.js" />"></script>
+<script src="<c:url value="/resources/js/customized/trekangular.js" />"></script>
+
 </head>
-<body class="sections">
+
+<body class="sections" ng-controller="trekcontroller">
 
 	<div class="masthead">
 		<div class="heading" style="height: 88px;">
@@ -69,18 +73,27 @@
 					<div id="accordion" class="panel-group">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion"
-										href="#collapseOne"><p class="option">Your upcoming
-											Treks.</p></a>
+								<h4>
+									<a href="#collapseOne" data-toggle="collapse"
+										data-parent="#accordion">Your upcoming Treks.</a>
 								</h4>
+								<form action="usertreks.do" method="get">
+
+									<button type="submit" class="btn btn-xs">
+										<span href="#collapseOne" class="glyphicon glyphicon-refresh"
+											style="padding-left: 10px;"></span>
+									</button>
+								</form>
 							</div>
 							<div id="collapseOne" class="panel-collapse collapse">
 								<div class="panel-body">
-									<ul>
-										<li>Nanda Devi</li>
-										<li>Nainital</li>
-									</ul>
+									<table>
+										<c:forEach items="${userTreks}" var="usertrek">
+											<tr>
+												<td><c:out value="${usertrek}" /></td>
+											</tr>
+										</c:forEach>
+									</table>
 								</div>
 							</div>
 						</div>
@@ -141,123 +154,46 @@
 						<h3 class="upTrek">Upcoming Treks..</h3>
 					</div>
 				</div>
+				Search:<input ng-model="query"> Sort By:<select
+					ng-model="orderProp">
+					<option value="name">Alphabetical</option>
+					<option value="age">Newest</option>
+				</select>
 				<button class="btn btn-primary btn-lg positionLogin"
 					data-toggle="modal" data-target="#myModal" class="newtrek"
 					style="margin-left: 67%;">Create New Trek</button>
-				<div class="row">
+				<div class="row"
+					ng-repeat="treks in currenttreks|filter:query|orderBy:orderProp">
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-4">
 								<img class="trkpic"
-									src="<c:url value="/resources/images/t17.jpg"/>"
+									src="<c:url value="/resources/images/{{treks.img}}"/>"
 									alt="image is not available">
 							</div>
 							<div class="col-md-8">
-								<h3 class="wide">PMT: Trek to Rajmachi on 29th - 30th Nov
-									'14.</h3>
+								<h3 class="wide">{{treks.heading}}</h3>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<form action="join.do" method="get">
-									<input type="hidden" name="trekname" value="Rajmanchi" /> <input
-										type="hidden" name="trek_id" value="1" />
-									<button type="submit" class="btn btn-sm">Join</button>
-								</form>
-								<hr class="wide">
-								<p class="descp">Hey Mates, Dont miss the fun as Trek Mates
-									India invite you for An overnight Trek to Rajmachi and return
-									Via Karjat Route on 29th - 30th Nov '14. Little info about the
-									fort Type:...</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-4">
-								<img class="trkpic"
-									src="<c:url value="/resources/images/t18.jpg" />"
-									alt="image is not available">
-							</div>
-							<div class="col-md-8">
-								<h3 class="wide">PMT: Trek to Peb Fort on 26th Oct '14.</h3>
-								<span class="glyphicon glyphicon-user"></span> <span
-									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<form action="join.do" method="get">
+								<form action="join.do" method="post">
 
-									<input type="hidden" name="trekname" value="Peb Fort" /> <input
-										type="hidden" name="trek_id" value="2" />
-									<button type="submit" class="btn btn-sm">Join</button>
-								</form>
-								<hr class="wide">
-								<p class="descp">We at Trek Mates India have arranged a Trek
-									to Vikatgad (Peb) Fort on 26th Oct 2014, Sunday. Trek Details
-									:Type : Hill FortHeight : 2100 Feet above MSL (Approx) Grade :
-									MediumDistrict : RaigadRegion : KarjatBase Village :
-									NeralSome...</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-4">
-								<img class="trkpic"
-									src="<c:url value="/resources/images/t19.jpg" />"
-									alt="image is not available">
-							</div>
-							<div class="col-md-8">
-								<h3 class="wide">PMT: Scuba Diving Special Visit to Netrani
-									Island, Karnataka with Trek Mates India on 24th January to 26th
-									January 2015.</h3>
-								<span class="glyphicon glyphicon-user"></span> <span
-									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<form action="join.do" method="get">
-									<input type="hidden" name="trekname" value="Netrani island" />
-									<input type="hidden" name="trek_id" value="3" />
-									<button type="submit" class="btn btn-sm">Join</button>
-								</form>
-								<hr class="wide">
-								<p class="descp">We at Trek Mates India Invite you for Scuba
-									Diving Special Visit to Netrani Island, Karnataka on 24th
-									January to 26th January 2015. Did you ever wanted to swim like
-									a...</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-4">
-								<img class="trkpic"
-									src="<c:url value="/resources/images/t20.jpg"/>"
-									alt="image is not available">
-							</div>
-							<div class="col-md-8">
-								<h3 class="wide">PMT:Trek to Dudhsagar Waterfall Top
-									through Jungle Route and Camping near the Waterfall on 17th and
-									18th January 2015</h3>
-								<span class="glyphicon glyphicon-user"></span> <span
-									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
+									<input type="hidden" name="trekname" value="{{treks.name}}" />
 
-								<form action="join.do" method="get">
-
-									<input type="hidden" name="trekname"
-										value="Dudhsagar waterfall" /> <input type="hidden"
-										name="trek_id" value="4" />
-									<button type="submit" class="btn btn-sm">Join</button>
+									<button type="submit" class="btn btn-xs"
+										aria-label="Left Align">
+										<span class="glyphicon glyphicon-plus"
+											style="padding-left: 10px;">Join</span>
+									</button>
 								</form>
+
+
 								<hr class="wide">
-								<p class="descp">Visit the Legendary Waterfall of India with
-									Trek Mates India Trek to Dudhsagar Waterfall Top through Jungle
-									Route and Camping near the Waterfall on 17th and 18th January
-									2015. .</p>
+								<p class="descp">{{treks.descp}}</p>
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<div class="text-center">
 				<div class="pagination-centered" style="align: centre;">
@@ -325,7 +261,8 @@
 									<form:input path="trekname" class="form-control" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
@@ -335,7 +272,8 @@
 									<form:input path="treksummary" class="form-control" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 							<div class="form-group">
 								<div class="col-sm-3">
 									<form:label path="description">Trek Description</form:label>
@@ -344,27 +282,32 @@
 									<form:textarea path="description" rows="3" cols="20" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
 									<form:label path="startdate">Start Date</form:label>
 								</div>
 								<div class="col-sm-9">
-									<form:input path="startdate" class="form-control" placeholder="yyyy-mm-dd" />
+									<form:input path="startdate" class="form-control"
+										placeholder="yyyy-mm-dd" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
 									<form:label path="enddate">End Date</form:label>
 								</div>
 								<div class="col-sm-9">
-									<form:input path="enddate" class="form-control" placeholder="yyyy-mm-dd" />
+									<form:input path="enddate" class="form-control"
+										placeholder="yyyy-mm-dd" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
@@ -372,10 +315,11 @@
 								</div>
 								<div class="col-sm-9">
 									<form:input path="meetuppoint" class="form-control" />
-									
+
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
@@ -385,7 +329,8 @@
 									<form:input path="category" class="form-control" />
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 
 							<div class="form-group">
 								<div class="col-sm-3">
@@ -395,24 +340,27 @@
 									<form:input path="imgurl" type="file" class="form-control" />
 								</div>
 							</div>
-							</br> </br>
-							
+							</br>
+							</br>
+
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<input type="submit" name="SUBMIT">
 								</div>
 							</div>
-							</br> </br>
+							</br>
+							</br>
 						</form:form>
 					</div>
-				
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Reset</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Reset</button>
+						<button type="button" class="btn btn-primary">Save
+							changes</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 
 
@@ -459,6 +407,7 @@
 			</p>
 		</div>
 	</div>
+
 	<script type="text/javascript"
 		src="<c:url value="/resources/js/jquery-2.11.1.js" />"></script>
 	<script type="text/javascript"

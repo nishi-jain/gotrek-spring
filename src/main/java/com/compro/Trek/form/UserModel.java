@@ -8,19 +8,14 @@ import java.util.Set;
 public class UserModel implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private int User_id;
-	private String Username;
-	private String Email;
-	private String Password;
-	private Set<TrekModel> treks= new HashSet<TrekModel>();;
-	
-	public Set<TrekModel> getTreks() {
-		return treks;
-	}
 
-	public void setTreks(Set<TrekModel> treks) {
-		this.treks = treks;
-	}
+	private int User_id;
+		private String Username;
+
+	private String Email;
+
+	private String Password;
+	
 
 	public void setUser_id(int user_id) {
 		User_id = user_id;
